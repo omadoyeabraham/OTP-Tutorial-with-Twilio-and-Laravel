@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Services\TwilioService;
 
-class OTPController extends Controller
+class OTPSController extends Controller
 {
     /**
      * @var TwilioService

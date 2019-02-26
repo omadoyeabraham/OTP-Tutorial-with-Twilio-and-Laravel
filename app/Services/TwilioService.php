@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use Exception;
 use Twilio\Exceptions\ConfigurationException;
 use Twilio\Rest\Client;
 use Twilio\TwiML\VoiceResponse;
