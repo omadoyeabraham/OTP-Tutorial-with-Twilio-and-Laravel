@@ -31,7 +31,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       - "MYSQL_ROOT_PASSWORD=secret"
-      - "MYSQL_DATABASE=twilioLaravelOTP"
+      - "MYSQL_DATABASE=twilio-otp-article"
     ports:
       - "33061:3306"
 
