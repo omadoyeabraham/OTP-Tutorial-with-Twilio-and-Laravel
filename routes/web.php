@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('callUser', 'OTPController@callUserWithOtp');
+
+Route::post('generateMessage/{otpCode}', 'OTPController@generateVoiceMessage')->name('generateMessage');

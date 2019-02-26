@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Services\TwilioService;
 
-class OtpController extends Controller
+class OTPController extends Controller
 {
     /**
      * @var TwilioService
@@ -28,12 +28,15 @@ class OtpController extends Controller
     {
         try {
             $data = $request->all();
-            $call = $this->voiceService->makeOtpVoiceCall($data["phoneNumber"], $data["otpCode"]);
+            $callId = $this->voiceService->makeOtpVoiceCall($data["phoneNumber"], $data["otpCode"]);
         } catch (\Exception $e) {
             return response()->json($e->getMessage(), 500);
         }
 
-        return response()->json($call, 200);
+        return response()->json([
+            "message" => 'Call queued successfully',
+            "callId" => $callId
+        ], 200);
     }
 
     /**
