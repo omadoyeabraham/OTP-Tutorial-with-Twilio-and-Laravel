@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\OTPService;
+use App\Services\TwilioService;
 use Illuminate\Http\Request;
 
 class OTPcontroller extends Controller
@@ -29,12 +31,19 @@ class OTPcontroller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param OTPService $OTPService
+     * @param TwilioService $twilioService
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Twilio\Exceptions\TwilioException
      */
-    public function store(Request $request)
+    public function store(Request $request, OTPService $OTPService, TwilioService $twilioService)
     {
-        //
+        $otp = $OTPService->createOtp();
+
+        $callId = $twilioService->makeOtpVoiceCall(env('AUTHORISED_PHONE_NUMBER'), $otp->code);
+
+        return view('otp.validate', ['callId' => $callId]);
     }
 
     /**
