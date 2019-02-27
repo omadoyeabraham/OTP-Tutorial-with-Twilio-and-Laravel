@@ -40,6 +40,7 @@
      @endisset
 
     <form method="post" action="{{route('otp.validate')}}">
+        @csrf
         <div class="form-group">
             <input type="number" name="otpCode" placeholder="Enter the OTP provided to you" class="form-control" required>
         </div>
