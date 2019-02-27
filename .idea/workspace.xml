@@ -58,8 +58,8 @@
         <entry file="file://$PROJECT_DIR$/../../../articles/twilio-otp-article.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1240">
-                <caret line="583" column="13" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
+              <first_editor relative-caret-position="835">
+                <caret line="556" column="120" lean-forward="true" selection-start-line="556" selection-start-column="120" selection-end-line="556" selection-end-column="120" />
                 <folding>
                   <element signature="e#1013#1020#1" expanded="true" />
                   <element signature="e#1304#1311#1" expanded="true" />
@@ -346,12 +346,12 @@
       <updated>1551183072386</updated>
       <workItem from="1551183073708" duration="5596000" />
       <workItem from="1551190974707" duration="13631000" />
-      <workItem from="1551251840291" duration="11102000" />
+      <workItem from="1551251840291" duration="11428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30329000" />
+    <option name="totallyTimeSpent" value="30655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="3440" height="1440" extended-state="0" />
@@ -639,8 +639,8 @@
     <entry file="file://$PROJECT_DIR$/../../../articles/twilio-otp-article.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1240">
-            <caret line="583" column="13" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
+          <first_editor relative-caret-position="835">
+            <caret line="556" column="120" lean-forward="true" selection-start-line="556" selection-start-column="120" selection-end-line="556" selection-end-column="120" />
             <folding>
               <element signature="e#1013#1020#1" expanded="true" />
               <element signature="e#1304#1311#1" expanded="true" />
