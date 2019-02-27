@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60a7e65e-74c1-467c-a766-19617a7c684b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/otp/validate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OTPSController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OTPSController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OTPcontroller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OTPController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/OTP.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/OTP.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/OTPService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/OTPService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/TwilioService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/TwilioService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/otp/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/otp/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="60a7e65e-74c1-467c-a766-19617a7c684b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -356,12 +346,12 @@
       <updated>1551183072386</updated>
       <workItem from="1551183073708" duration="5596000" />
       <workItem from="1551190974707" duration="13631000" />
-      <workItem from="1551251840291" duration="10580000" />
+      <workItem from="1551251840291" duration="10873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29807000" />
+    <option name="totallyTimeSpent" value="30100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="3440" height="1440" extended-state="0" />
