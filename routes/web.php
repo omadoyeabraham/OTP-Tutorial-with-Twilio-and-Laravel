@@ -1,22 +1,15 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('callUser', 'OTPController@callUserWithOtp');
-
 Route::post('generateMessage/{otpCode}', 'OTPController@generateVoiceMessage')->name('generateMessage');
 
 Route::resource('otp', 'OTPController');
+
+Route::get('otp/validate', 'OTPController@ShowValidate');
+
+Route::post('otp/validate', 'OTPController@validateOTP')->name('otp.validate');
+
+//Route::post('callUser', 'OTPController@callUserWithOtp');

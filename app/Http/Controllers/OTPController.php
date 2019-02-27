@@ -6,18 +6,8 @@ use App\Services\OTPService;
 use App\Services\TwilioService;
 use Illuminate\Http\Request;
 
-class OTPcontroller extends Controller
+class OTPController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -46,48 +36,32 @@ class OTPcontroller extends Controller
         return view('otp.validate', ['callId' => $callId]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
+     * Route which Twilio calls to determine the voice message to be played to the user.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $otpCode
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function generateVoiceMessage(Request $request, $otpCode, TwilioService $twilioService)
     {
-        //
+        $twimlResponse = $twilioService->generateTwimlForVoiceCall($otpCode);
+
+        return response($twimlResponse, 200)
+            ->header('Content-Type', 'text/xml');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function validateOTP(Request $request, OTPService $OTPService)
     {
-        //
-    }
+        $otpCode = $request->get('otpCode');
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $otpIsValid = $OTPService->otpIsValid($otpCode);
+
+        if($otpIsValid) {
+            return view('otp.create', ['otpValidated' => true, 'otpCode' => $otpCode]);
+        }
+
+        return view('otp.validate', ['error' => $otpCode . " is invalid"]);
     }
 }

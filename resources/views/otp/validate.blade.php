@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Create OTP</title>
+    <title>Validate OTP</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <!-- Styles -->
@@ -24,30 +23,28 @@
 
         .container {
             max-width: 600px;
-            margin: 100px auto;
+            margin: 20px auto;
         }
 
     </style>
 </head>
 <body>
 <div class="container">
-    @if(isset($otpValidated) && $otpValidated)
-        <div class="alert alert-success alert-dismissible">
+    <h2>Validate your One Time Password</h2>
+
+    @isset($callId)
+        <div class="alert alert-info alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Success!</strong> Your OTP Code {{$otpCode}} has been validated.
+            Call with ID {{$callId}} has been made to your authorised phone number.
         </div>
-    @endif
+     @endisset
 
-        @isset($error)
-            <div class="alert alert-danger alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Error!</strong> {{$error}}
-            </div>
-        @endif
+    <form method="post" action="{{route('otp.validate')}}">
+        <div class="form-group">
+            <input type="number" name="otpCode" placeholder="Enter the OTP provided to you" class="form-control" required>
+        </div>
 
-    <form method="post" action="{{route('otp.store')}}">
-        @csrf
-        <input type="submit" value="Request For OTP" class="btn btn-lg btn-info">
+        <input type="submit" value="Validate OTP" class="btn btn-success">
     </form>
 </div>
 

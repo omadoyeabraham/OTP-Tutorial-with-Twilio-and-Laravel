@@ -46,9 +46,9 @@ class OTPSController extends Controller
      * @param $otpCode
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
-    public function generateVoiceMessage(Request $request, $otpCode)
+    public function generateVoiceMessage(Request $request, $otpCode, TwilioService $twilioService)
     {
-        $twimlResponse = $this->voiceService->generateTwimlForVoiceCall($otpCode);
+        $twimlResponse = $twilioService->generateTwimlForVoiceCall($otpCode);
 
         return response($twimlResponse, 200)
             ->header('Content-Type', 'text/xml');

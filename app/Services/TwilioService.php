@@ -37,7 +37,7 @@ class TwilioService
     public function makeOtpVoiceCall(String $phoneNumber, $otpCode)
     {
         // Url which points to our application route for generating the TWIML used in calling the user.
-        $twimlUrl = route('generateMessage', ['otpCode' => $otpCode]);
+        $twimlUrl = env('APP_URL') . "/generateMessage/" .$otpCode;
 
         $call = $this->twilioRestClient->calls->create($phoneNumber, env('TWILIO_FROM_NUMBER'), array("url" => $twimlUrl));
 

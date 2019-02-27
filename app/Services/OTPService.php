@@ -39,6 +39,6 @@ class OTPService
      */
     public function otpIsValid($otpCode)
     {
-        return OTP::where('code', $otpCode);
+        return count(OTP::where('code', $otpCode)->get()) ? true : false;
     }
 }
